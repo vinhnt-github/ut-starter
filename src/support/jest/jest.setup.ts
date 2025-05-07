@@ -10,6 +10,7 @@ beforeAll(() => {
 afterEach(() => {
     // Reset handlers between tests
     getServer().resetHandlers();
+    jest.restoreAllMocks();
 });
 
 afterAll(() => {

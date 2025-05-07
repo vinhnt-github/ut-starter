@@ -3,6 +3,11 @@ import Counter from './';
 import userEvent from '@testing-library/user-event';
 
 describe('Counter', () => {
+    it('Conponent rendering without error', () => {
+        const errorSpylog = jest.spyOn(console, 'error')
+        render(<Counter />);
+        expect(errorSpylog).not.toHaveBeenCalled();
+    });
     it('renders with initial count', () => {
         render(<Counter />);
         expect(screen.getByText(/Counter: 0/i)).toBeInTheDocument();
